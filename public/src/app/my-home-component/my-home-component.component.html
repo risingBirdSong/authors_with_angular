@@ -1,0 +1,27 @@
+<button [routerLink]="['/new']"> go to the new author page</button>
+  
+<ul>
+
+  <table>
+    <tr>
+      <th>Author</th>
+      <th> edit </th>
+      <th> delete </th>
+    </tr>
+
+    <tr *ngFor="let author of allTheAuthors"> 
+      <td>  {{author.authorName}} </td>
+      <td>  <button (click)="ShowEditAuthor(author._id)"> edit me </button> </td>
+      <td>  <button (click)="deleteMe(author._id)"> delete me </button> </td>
+    </tr>
+
+  </table>
+
+  <!-- <div *ngFor="let author of allTheAuthors">
+    <h3> author name : {{author.authorName}} </h3>
+    <p> number of books {{author.numOfBooks}}</p>
+    <p> publisher {{author.publisher}}</p>
+    <p> avg rating {{author.avgRating}}</p>
+    <p> currently working on books {{author.currentlyWorkingOnBook}}</p>
+  </div> -->
+</ul>

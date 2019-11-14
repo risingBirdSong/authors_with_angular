@@ -1,0 +1,16 @@
+<p>new-author-component works!</p>
+<button  [routerLink]="['/']"> Go Home please</button> 
+
+
+<h1 class="text-primary">Add a new author!</h1>
+
+<h2 *ngIf="errMsg" class="text-danger"> error : {{errMsg}}</h2>
+
+<form>
+  <input type="text" name="authorName" [(ngModel)]="newAuthor.authorName">
+  <button (click)="submitTheAuthor()" >submit author</button>
+  <button [routerLink]="['/']" >cancel</button>
+</form>
+
+<router-outlet>
+</router-outlet>

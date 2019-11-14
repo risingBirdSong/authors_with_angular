@@ -1,0 +1,17 @@
+<p>edit works fine</p>
+<h1 *ngIf="theAuthorToEdit"> the display name : {{theDisplayName}}</h1>
+
+<h1 *ngIf="errorMsg">erros from backend -> {{errorMsg}} </h1>
+
+<button [routerLink]="['/']">go home</button>
+
+<!-- <h2 *ngIf="errorMsg"> {{errorMsg}}</h2> -->
+
+<h3 class="text-danger" *ngIf="author.errors">{{author.errors | json}}</h3>
+<br>
+<!-- <h3 ng> </h3> -->
+
+<form>
+  <input type="text" name="theAuthorToEdit.authorName" value="{{theAuthorToEdit.authorName}}" [(ngModel)]="theAuthorToEdit.authorName" minlength="3" required #author="ngModel">
+  <button (click)="submitChanges()" > submit changes</button>
+</form>
